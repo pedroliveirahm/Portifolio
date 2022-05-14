@@ -1,0 +1,24 @@
+// Estrutura de Pastas :
+// www.projeto.com.br -> br.com.projeto
+    br / com / projeto
+                / videos
+                / gui 
+
+// Um software que contenha as seguintes classes na pasta src/
+
+// Vídeo :
+Filme.java
+Serie.java
+Anime.java
+Novela.java
+Documentário.java
+
+// Interface gráfica (GUI - Grafic User Interface) : 
+Janela.java
+MiniaturaVideo.java
+    // Botões
+    BotaoPlay.java
+    BotaoPause.java
+    BotaoVoltar.java
+
+App.java

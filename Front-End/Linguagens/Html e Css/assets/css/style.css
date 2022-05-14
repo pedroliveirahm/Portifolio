@@ -1,0 +1,201 @@
+/* DECLARAÇÕES PADRÃO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #212529;
+    margin-bottom: 100px;
+}
+
+ul, li, p {
+    list-style: none;
+    font-size: 1.1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1 { /* SÓ DEMONSTRATIVO */
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* NAV-BAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 3.2rem;
+    background-color: #19334f;
+    color: #FFF;
+
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img {
+    margin: 0 .8rem;
+}
+
+.nav-logo h2 {
+    letter-spacing: .2rem;
+}
+
+.menu {
+    display: flex;
+    margin-right: 3.4rem;
+}
+
+.menu li {
+    padding: 0 1.6rem;
+    font-size: 1.4rem;
+}
+
+#sobre, #projetos, #educacao {
+    padding: .6rem 1rem;
+    border-radius: .4rem;
+    background-color: #212529;
+}
+
+.menu li a:hover {
+    color: #265d98;
+    transition: 1.1s;
+}
+
+/* FLEXBOX 1 */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px; /* mesma largura das outras seções para alinhamento */
+    margin: 0 auto; /* quando passar dos 800 px as imagens ficaram ao meio */
+    background-color: #2360a2;
+}
+
+.flex > div { /* NÃO ENTENDI */
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+/* CSS GRID 1 */
+.grid1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 1fr é unidade fracional, neste caso, fica 100% / 3fr = 33,3% */
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+    grid-gap: 20px;
+    background-color: #2360a2;
+}
+
+.grid1 > div:nth-child(n + 4) { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center; /* alinhamento do texto com a imagem */
+}
+
+#anuncio {
+    grid-column: 1;
+    grid-row: 2 / 5; /* linha 2 até a linha 5 */
+    border-top : 10px solid tomato;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .grid1 {
+        grid-column: 1fr 1fr; /* de 3 colunas, agora só havera 2 */
+    }
+
+    .grid1 > div:nth-child(n + 4) {
+        display: block;
+    }
+
+    .grid1 #anuncio {
+        grid-column: auto;
+        grid-row: auto;
+        order: -1;
+    }
+}
+
+/* CSS GRID 2 */
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #2360a2;
+}
+
+.sidebar {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .grid2 {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        display: flex;
+        /* flex-direction: column;
+        max-width: 200px;
+        margin: 0 auto; */
+        overflow: scroll;
+    }
+
+    .sidebar > div {
+        flex: 1 0 200px;
+        margin: 0 10px;
+    }
+}
+
+/* CSS GRID 3 */
+.grid3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #2360a2;
+}
+
+.grid3-item:nth-child(1) {
+    grid-row: 1 / 3;
+}
+
+.grid3-item {
+    display: grid;
+}
+
+.grid3-item img {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self: end;
+}
+
+.grid3-item p {
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    padding: 10px;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+}
