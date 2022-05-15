@@ -15,10 +15,12 @@
   - [Operadores Lógicos](#operadores-lógicos)
 
 • [Comparador Não Boleano](#comparador-não-boleano)<br>
-• [Trocando valor de variáveis](#trocar-valores-de-variáveis)<br>
+• [Trocando Valor de Variáveis](#trocar-valores-de-variáveis)<br>
 • [Condicionais](#condicionais)<br>
-• [Laços de repetição](#laços-de-repetição)<br>
-
+• [Laços de Repetição](#laços-de-repetição)<br>
+• [Mini Projetos](#mini-projetos)<br>
+• []()<br>
+• []()<br>
 # Variável
 
 ```bash
@@ -256,7 +258,8 @@ let tipocliente = pontos > 100 ? 'premium' : 'comum';
 console.log(tipo)
 #comum
 ```
-
+* ? -> se sim
+* : -> se não
 ```bash
 let pontos = 120;
 let tipocliente = pontos > 100 ? 'premium' : 'comum';
@@ -495,4 +498,131 @@ const cores = ["Verde", "Azul", "Amarelo"];
 for(let value of cores) {
     console.log(value); # acesso as propriedades dos índices do array
 }
+```
+# Mini Projetos
+## Máximo Entre Dois Valores
+```bash
+$Premissa
+// Escrever uma função que usa 2 números e retorna o maior deles
+```
+```bash
+$Exemplo
+let maiorValor = max(38,46);
+```
+
+```bash
+function max(numero1, numero2) {
+    
+    if (numero1 > numero2) {
+        return numero1;
+    } else {
+        return numero2;
+    }
+}
+```
+#### Código mais limpo
+* Uso do operador ternário
+```bash
+function max(numero1, numero2) {
+    return numero1 > numero2 ? numero1 : numero2 ;
+}
+```
+## Fizzbuzz
+• Compara valores retorna baseado no valor de entrada
+```bash
+$Premissa
+// Valor que não é um número, retornar -> Não é um número
+// Valor divisível tanto por 3 quanto por 5, retornar -> FizzBuzz
+// Valor divisível por 3, retornar -> Fizz
+// Valor divisível por 5, retornar ->  Buzz
+// Valor que não é divisível tanto por 3 quanto por 5, retornar -> Resto diferente de 0
+```
+
+```bash
+const resultado = fizzBuzz(15);
+
+function fizzBuzz(entrada) {
+    if (typeof entrada !== "number")
+        return "Não é um número";
+
+    if (entrada % 5 === 0 && entrada % 3 === 0)
+    return "FizzBuzz";
+
+    if (entrada % 3 === 0)
+        return "Fizz";
+
+    if (entrada % 5 === 0)
+        return "Buzz";
+
+    if (entrada % 3 !== 0 && entrada % 5 !== 0)
+    return "Resto da divisão é diferente de 0";
+    
+    return entrada;
+}
+
+console.log(resultado);
+#FizzBuzz
+```
+## Medidor de Velocidade
+```bash
+$Premissa
+// Velocidade max de 70km, retornar -> Limite permitido 
+// A cade 5km a cima do limite, retornar -> + 1 ponto na carteira
+// Função Math.Floor() <- Arredonda números
+// Caso pontos forem maior ou igual a 12, return -> Carteira apreendida
+```
+
+```bash
+function verificarVelocidade(velocidade) {
+    const velocidadeMax = 70;
+    
+    if (velocidade <= velocidadeMax) {
+        console.log("Ok, velocidade permitida");
+    } else {
+        const calculo = velocidade - velocidadeMax;
+        const pontos = calculo / 5;
+        
+        if (pontos >= 12) {
+            console.log("Sua carteira foi apreendida");
+        } else {
+            console.log("Você recebeu " + Math.floor(pontos) + " ponto(s) na carteira")
+        }
+    }
+}
+
+verificarVelocidade(109);
+#Você recebeu 7 ponto(s) na carteira
+```
+## Par ou Ìmpar
+```bash
+$Premissa
+// Receber uma quantidade de valores para avaliar
+// Dizer cada número dessa sequência de valores é par ou ímpar
+```
+
+```bash
+function exibirTipo(numero) {
+    if (typeof numero !== "number") {
+        console.log("Não é um número. Por gentileza, digite um número !")
+    } else {
+        for (i = 0; i <= numero; i++) {
+            if (i % 2 === 0) {
+                console.log(i, "Par");
+            } else {
+                console.log(i, "Ímpar");
+            }
+        }
+    }
+}
+
+exibirTipo(5);
+```
+### Encontro o String
+```bash
+$Premissa
+// Criar um método que leia as propriedades de um objeto
+// Exibir somente as propriedades do tipo String desse objeto
+```
+```bash
+
 ```

@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.4rem;
 }
 
-#navbarCollapse {
+.navbar-collapse {
     display: flex;
     justify-content: center;
 }
@@ -62,11 +62,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width:768px) {
-    #navbarCollapse,ul li {
+    .navbar-collapse,ul li {
         display: block;
     }
 
-    #navbarCollapse ul li {
+    .navbar-collapse ul li {
         background-color: #3d3d3d;
         padding: .3rem 1rem;
         margin: .3rem 0rem !important;
@@ -74,8 +74,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* TESTES */
-.layout {
-    max-width: 1140px;
-    margin: 0 auto;
+/* ASIDE */
+.position-sticky {
+    top: 4.6rem
 }
