@@ -19,33 +19,36 @@
 • [Condicionais](#condicionais)<br>
 • [Laços de Repetição](#laços-de-repetição)<br>
 • [Mini Projetos](#mini-projetos)<br>
+• [Factory Function](#factory-functions)<br>
+• [Constructor Function](#constructor-functions)<br>
+• [Natureza Dinâmica dos Objetos](#natureza-dinâmica-dos-objetos)<br>
+• [Clonagem de Objetos](#clonando-objetos)<br>
+• [Math](#math)<br>
+• [Strings](#strings)<br>
 • []()<br>
-• []()<br>
-# Variável
 
+# Avisos
+* No JS não é necessário a atribuição de `;` no final de um comando
+* E a declaração de uma string pode estar dentro de aspas simples ou duplas
+# Variável
 ```bash
 $Exemplo
 let idade = 18;
 let nome = 'Pedro';
 ```
-
 ```bash
 console.log(idade);
-18
+#18
 ```
-
 ```bash
 console.log(nome);
-Pedro
+#Pedro
 ```
-
 ```bash
 console.log('Hello World');
-Hello World
+#Hello World
 ```
-
 # Constante
-
 • Só usar a função (let) se for preciso alterar os valores posteriormente<br><br>
 • A variável constante não tem seu valor alterado posteriormente
 
@@ -53,42 +56,38 @@ Hello World
 $Exemplo
 const valoringresso = 190;
 let valoringresso = 200;
+
 console.log('valoringresso');
 #Error
 ```
 
-• Nesse caso ocorrerá um erro, pois a varíavel do tipo (constante) não pode ser alterada
-
+• Nesse caso ocorrerá um erro, pois não se pode alterar o valor de uma variável do tipo constante
 # Tipos Primitivos
-
 ```bash
 let nome = 'rafael'; //string
 let idade = 18; //number - float, double e int
 let aprovado = true; //boolean
-let sobrenome ; //undefined - em definição
+let sobrenome; //undefined
 let cor = null; //none - em casos para redefinir valor
 ```
-
 # Tipagem Dinâmica
-
-• O Js não precisa atribuir o tipo primitivo de dado a variável
-
+• No Js não é necessário atribuir o tipo primitivo a variável
 ```bash
 let nome = 'Pedro';
-typeof  nome
-"string"
+typeof nome
+#"string"
 ```
 
 ```bash
 let idade = 18;
 typeof idade
-"number"
+#"number"
 ```
 
 ```bash
 let cor = null;
 typeof cor
-"object"
+#"object"
 ```
 
 # Objetos
@@ -112,93 +111,99 @@ let pessoa = {
 
 ```bash
 console.log(pessoa);
-#Resultado:
-estaAprovado: true
-idade: 18
-nome: "Pedro"
-sobrenome: "Oliveira"
-[[Prototype]]: Object
+#estaAprovado: true
+#idade: 18
+#nome: "Pedro"
+#sobrenome: "Oliveira"
+
+console.log(pessoa.nome);
+#Pedro
+
+console.log(typeof pessoa);
+#Object
 ```
-
-• No terminal:
-
 ```bash
-pessoa.nome;
-'Pedro'
-
-typeof pessoa;
-"object"
+const lapis = {
+    cor : "Preta",
+    marca : "Bic",
+    ponta : 0.7
+};
 ```
-
 # Arrays
 
 • Nada mais é do que um conjunto de dados que pode ser acessado por um indice
 
-• E o índice é a posição exata de onde se encontra uma informação de um conjunto de informações
-
+• E o índice é a posição exata de onde se encontra uma informação de um conjunto de dados
 ```bash
 let idadefamilia = [18,36,40];
 console.log(idadefamilia);
-(3) [18, 36, 40]
-0: 18
-1: 36
-2: 40
-length: 3
+#(3) [18, 36, 40]
+#0: 18
+#1: 36
+#2: 40
+#length: 3
 ```
 
-• Essa sequência numérica(0,1,2) são os Arrays
+• Essa sequência numérica(0,1,2) são os índices
 
 ```bash
-console.log(idadefamilia[2])
-40
+console.log(idadefamilia[2]);
+#40
 ```
 
 ```bash
-console.log(idadefamilia.length)
-3
+console.log(idadefamilia.length);
+#3
 ```
 
 # Função
-
 • Controla todo o fluxo de execução
-
 - Entrada de dados
 - Saida de dados
 
 • Padrão a seguir (Boas práticas)
-
 - function verbo+Substantivo
+- `camelCase` - umDoisTresQuatro
 
 ```bash
 let corSite = "azul";
-function resetaCor() {
+
+function escolherCor() {
     corSite = "";
 }
 console.log(corSite);
+#azul
+
 resetaCor();
 console.log(corSite);
 #vazio
 ```
 
 ```bash
-let corSite = "azul";
-function resetaCor(cor) {
-    corSite = cor;
+let corSite = "verde";
+
+function escolherCor(novaCor) {
+    corSite = novaCor;
 }
 console.log(corSite);
-resetaCor("vermelho");
+#verde
+
+escolherCor("vermelho");
 console.log(corSite);
 #vermelho
 ```
 
 ```bash
 let corSite = "azul";
+
 function resetaCor(cor,tonalidade) {
     corSite = cor + ' ' + tonalidade;
 }
 console.log(corSite);
+#azul
+
 resetaCor("verde", "claro");
-console.log(corSite)
+console.log(corSite);
 #verde claro
 ```
 
@@ -211,28 +216,26 @@ console.log(corSite)
 • \*\* Exponenciação
 
 • Operadores:
-
 - Incremento ++
 - Decremento --
 
 ```bash
 let idade = 18;
 
-console.log(idade++)
-18
-console.log(idade)
-19
+console.log(idade++);
+#18
+
+console.log(idade);
+#19
 ```
 
 ```bash
 let idade = 20
 
-console.log(++idade)
-21
+console.log(++idade);
+#21
 ```
-
-# Operadores de igualdade
-
+# Operadores de Igualdade
 ```bash
 console.log(1===1);
 #true
@@ -245,17 +248,16 @@ console.log('1'===1);
 ```
 
 ```bash
-console.log('1'==1)
+console.log('1'==1);
 #true
 ```
-
 - Está sendo comparado apenas o valor
-
 # Operador Ternário
 ```bash
 let pontos = 100;
 let tipocliente = pontos > 100 ? 'premium' : 'comum';
-console.log(tipo)
+
+console.log(tipo);
 #comum
 ```
 * ? -> se sim
@@ -263,12 +265,12 @@ console.log(tipo)
 ```bash
 let pontos = 120;
 let tipocliente = pontos > 100 ? 'premium' : 'comum';
-console.log(tipo)
+
+console.log(tipo);
 #premium
 ```
 # Operadores Lógicos
 • Tomam decisões baseadas em condições multiplas
-
 - And `&&`
 - Or `||`
 - Not `!`
@@ -297,7 +299,7 @@ console.log(podeAplicar);
 - Null
 - 0
 - False
-- '' (string vazio)
+- "" (string vazio)
 - NaN (not a number) - calculos matemáticos que resultam em resultados não compatíveis
 
 • Truthy:
@@ -309,14 +311,13 @@ console.log(podeAplicar);
 const corPadrao = 'Azul';
 let corPersonalizada = 'Vermelho';
 let corPerfil = corPadrao || corPersonalizada;
+
 console.log(corPerfil);
 #Azul
 ```
-
 - O `||` (Or) para de fazer a comparação ao aparecer o primeiro valor Truthy
 
 # Trocar valores de Variáveis
-
 ```bash
 let a = "Vermelho";
 let b = "Azul";
@@ -337,19 +338,19 @@ function trocarValor(a) {
     return a;
 }
 
-function mostrarValor() {
-    console.log(a);
+function mostrarValor(numero) {
+    console.log(numero);
 }
 
-mostrarValor();
+mostrarValor(a);
 #10
 
 trocarValor(20);
-mostrarValor();
+mostrarValor(this.a);
 #20
 ```
 ```bash
-let a = 10
+let a = 10;
 
 function trocarValor(valor) {
     a = valor;
@@ -360,7 +361,7 @@ function mostrarValor() {
     console.log(a);
 }
 
-mostrarValor()
+mostrarValor();
 #10
 
 trocarValor(20);
@@ -389,11 +390,10 @@ function outputSaudacao() {
     }
 }
 
-inputHora(18);
+inputHora(11);
 outputSaudacao();
-#Boa noite !
+#Bom dia !
 ```
-
 ### Switch case
 
 ```bash
@@ -413,7 +413,7 @@ switch (acesso) {
     console.log("Você tem a permissao ceo");
     break;
 
-    default : // semelhante ao else
+    default : # semelhante ao else
     console.log("Usuário não reconhecido");
 }
 ```
@@ -423,7 +423,7 @@ switch (acesso) {
 ### For
 
 ```bash
-for(i = 0; i < 5; i++) {
+for(let i = 0; i < 5; i++) {
     console.log("ABC", i);
 }
 ```
@@ -473,19 +473,21 @@ const cores = ["Verde", "Azul", "Amarelo"];
 * key-value
 ```bash
 for(let key in pessoa) {
-    console.log(key); # acesso as keys
+    console.log(key); # acesso as keys(atributos)
 
     console.log(key, pessoa.nome);
-    
+    # ou
     console.log(key, pessoa["nome"]);
+
+    console.log(key,pessoa[key])
 }
 ```
 * Acessar uma propriedade(atributo) -> . ou [" "]
 ```bash
-for(let value in cores) {
-    console.log(value); # acesso aos índices
+for(let key in cores) {
+    console.log(key); # acesso aos índices
 
-    console.log(value,cores[value]); # acesso as propriedades dos índices
+    console.log(key,cores[key]); # acesso as propriedades dos índices
 }
 ```
 *  Quando se acessa um array, todas as propriedades são acessadas pelo índice
@@ -605,7 +607,7 @@ function exibirTipo(numero) {
     if (typeof numero !== "number") {
         console.log("Não é um número. Por gentileza, digite um número !")
     } else {
-        for (i = 0; i <= numero; i++) {
+        for (let i = 0; i <= numero; i++) {
             if (i % 2 === 0) {
                 console.log(i, "Par");
             } else {
@@ -624,5 +626,232 @@ $Premissa
 // Exibir somente as propriedades do tipo String desse objeto
 ```
 ```bash
+const filme = {
+    nome : "Vingadores",
+    ano : 2018,
+    diretor : "Russo's",
+    personagem : "Homem de Ferro"
+}
 
+function exibirPropriedades(object) {
+    for (let key in object) {
+        if (typeof object[key] === "string") {
+            console.log(key, object[key]);
+        }
+    }
+}
+
+exibirPropriedades(filme);
 ```
+### Multiplos de 3 e 5
+```bash
+$Premissa
+// Criar uma função que retorna a soma de todos os multiplos de 3 e 5
+```
+```bash
+function somar(numero) {
+    let multiplo5 = 0;
+    let multiplo3 = 0;
+
+    for(let i = 0; i <= numero; i++) {
+        if(i % 3 === 0)
+            multiplo3 += i;
+        if(i % 5 === 0)
+            multiplo5 += i;
+    }
+
+    console.log(multiplo3 + multiplo5);
+}
+
+somar(10);
+#33
+```
+### Calcular Média
+```bash
+$Premissa
+// Calcular a média das notas escolares
+```
+
+```bash
+const array = [70, 70, 80];
+
+function mediaAluno(notas) {
+    
+    const media = calcularMedia(notas);
+
+    if(media <= 59) return 'F';
+    if(media <= 69) return 'D';
+    if(media <= 79) return 'C';
+    if(media <= 89) return 'B';
+    return 'A';
+}
+
+function calcularMedia(array) {
+    
+    let soma = 0;
+
+    for (let valor of array) {
+        soma += valor;
+    }
+
+    return soma / (array.length);
+}
+
+console.log(mediaAluno(array));
+#C
+```
+### Contador de Asteríscos
+```bash
+$Premissa
+// Criar uma função que exibe a quantidade de * que aquela linha possui
+```
+```bash
+function exibirAsterisos(linhas) {
+    let padrao = '';
+    for(let linha =  1; linha <= linhas; linha++) {
+        padrao += '*';
+        console.log(padrao);
+    }
+}
+
+exibirAsterisos(10);
+```
+### Exibir Números Primos
+```bash
+$Premissa
+// Criar função para mostrar os números primos
+```
+```bash
+function exibirNumerosPrimos(limite) {
+    for (let numero = 2; numero <= limite; numero++) {
+        if (numeroPrimo(numero)) 
+            console.log(numero);
+    }
+}
+
+function numeroPrimo(numero) {
+    for (let divisor = 2; divisor < numero; divisor++) {
+            
+        if(numero % divisor === 0) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+exibirNumerosPrimos(15);
+```
+# Factory Function
+• Encapsula uma informação dentro de um método que cria um objeto
+
+```bash
+    # Object
+const celular = {
+    marca : 'ASUS',
+    tamanhoTela : {
+        vertical : 155,
+        horizontal : 75
+    },
+    capacidadeBateria : 5000,
+    ligar: function() {
+        console.log("Fazendo ligação...");
+    }
+}
+```
+* Factory Function :
+```bash
+function criarCelular(marca,tamanhoTela,capacidadeBateria) {
+    return celular = {
+        marca,
+        tamanhoTela,
+        capacidadeBateria,
+        ligar() {
+            console.log("Fazendo ligação...");
+        }
+    }
+}
+
+const novoCelular = criarCelular('Zenfone', 5.5,5000);
+
+console.log(novoCelular);
+#{marca: 'Zenfone', tamanhoTela: 5.5, capacidadeBateria: 5000, ligar: ƒ}
+```
+# Constructor Function
+* Semelhante com a factory function
+```bash
+# Pascal Case - UmDoisTresQuatro
+function Celular(marca,tamanhoTela,capacidadeBateria) {
+    this.marca = marca,
+    this.tamanhoTela = tamanhoTela,
+    this.capacidadeBateria = capacidadeBateria,
+    this.ligar = function() {
+        console.log("Fazendo Ligação...");
+    }
+}
+# Não precisa do return
+
+const novoCelular = new Celular("ASUS",5.2,5500);
+
+console.log(novoCelular);
+#Celular {marcaCelular: 'ASUS', tamanhoTela: 5.2, capacidadeBateria: 5500, ligar: ƒ}
+```
+# Natureza Dinâmica dos Objetos
+```bash
+const mouse = {
+    cor : 'Red',
+    marca : 'RedDragon',
+    dpi : 2000
+}
+
+mouse.velocidade = 2400
+
+mouse.trocarDPI = function(dpi) {
+    this.dpi = dpi;
+    return dpi
+}
+
+mouse.trocarDPI(4000);
+console.log(mouse);
+```
+# Clonagem de Objetos
+* Object.assign({alvo}, object);
+```bash
+const celular = {
+    marca : 'ASUS',
+    tamanhoTela : {
+        vertical : 155,
+        horizontal : 75
+    },
+    capacidadeBateria : 5000,
+    ligar: function() {
+        console.log("Fazendo ligação...");
+    }
+}
+
+const novoObjeto = Object.assign({
+    camera : 100
+},celular)
+console.log(novoObjeto);
+```
+* Ou
+```bash
+const novoObjeto = {...celular};
+console.log(novoObjeto);
+```
+# Math
+• Família de funções mais usadas no JS
+* Math.random() - Cria números aleatórios
+* Math.max(3,6,8,10) - Diz o maior valor (10)
+* Math.min(3,6,8,10) - Diz o menor valor (3)
+# Strings
+• Métodos de um string
+* Tipo primitivo
+```bash
+const mensagem = 'minha primeira mensagem';
+```
+* Tipo objeto
+```bash
+const outraMensagem = new String('bom dia');
+```
+
