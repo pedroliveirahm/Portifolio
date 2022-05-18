@@ -1,7 +1,6 @@
 <h4>Sumário</h4>
 
 • [Variáveis](#variável)<br>
-• [Constante](#constante)<br>
 • [Tipos Primitivos](#tipos-primitivos)<br>
 • [Tipagem Dinâmica](#tipagem-dinâmica)<br>
 • [Objetos](#objetos)<br>
@@ -25,12 +24,14 @@
 • [Clonagem de Objetos](#clonando-objetos)<br>
 • [Math](#math)<br>
 • [Strings](#strings)<br>
-• []()<br>
+• [Template Literal](#template-literal)<br>
+• [Date](#date)
 
 # Avisos
 * No JS não é necessário a atribuição de `;` no final de um comando
 * E a declaração de uma string pode estar dentro de aspas simples ou duplas
-# Variável
+# Variáveis
+• `var`, `let` e `const`
 ```bash
 $Exemplo
 let idade = 18;
@@ -48,7 +49,35 @@ console.log(nome);
 console.log('Hello World');
 #Hello World
 ```
-# Constante
+## Var & Let
+• O Var é uma variável global, funciona em qualquer lugar do programa
+• O Let só funciona dentro do bloco onde declarou a variável
+
+```bash
+if(true) {
+    var a = 1;
+    let b = 2;
+}
+
+console.log(a);
+#1
+
+console.log(b);
+#is not defined
+```
+* O var funciona normalmente, enquanto o let da *error* 
+
+```bash
+let b = 2;
+
+if(true) {
+    console.log(b)
+}
+
+#2
+```
+* Neste caso, funciona normalmente, pois a variável let está dentro de um bloco de código maior
+## Constante
 • Só usar a função (let) se for preciso alterar os valores posteriormente<br><br>
 • A variável constante não tem seu valor alterado posteriormente
 
@@ -799,19 +828,20 @@ console.log(novoCelular);
 # Natureza Dinâmica dos Objetos
 ```bash
 const mouse = {
-    cor : 'Red',
+    cor : 'Azul',
     marca : 'RedDragon',
-    dpi : 2000
+    tipo : 'Gamer'
+};
+
+mouse.dpi = 5000;
+mouse.tipo = "Escritório";
+
+mouse.mudarCor = function(cor) {
+    this.cor = cor;
+    return cor;
 }
 
-mouse.velocidade = 2400
-
-mouse.trocarDPI = function(dpi) {
-    this.dpi = dpi;
-    return dpi
-}
-
-mouse.trocarDPI(4000);
+mouse.mudarCor('Red');
 console.log(mouse);
 ```
 # Clonagem de Objetos
@@ -827,12 +857,12 @@ const celular = {
     ligar: function() {
         console.log("Fazendo ligação...");
     }
-}
+};
 
-const novoObjeto = Object.assign({
+const novoCelular = Object.assign({
     camera : 100
-},celular)
-console.log(novoObjeto);
+},celular);
+console.log(novoCelular);
 ```
 * Ou
 ```bash
@@ -845,13 +875,64 @@ console.log(novoObjeto);
 * Math.max(3,6,8,10) - Diz o maior valor (10)
 * Math.min(3,6,8,10) - Diz o menor valor (3)
 # Strings
-• Métodos de um string
+• Métodos de um String
 * Tipo primitivo
 ```bash
-const mensagem = 'minha primeira mensagem';
+const mensagem = ('Dona aranha subiu pela parede');
+console.log(typeof mensagem);
+#string
 ```
 * Tipo objeto
 ```bash
-const outraMensagem = new String('bom dia');
+const outraMensagem = new String('O rato roeu a roupa do rei de roma');
+console.log(typeof outraMensagem);
+#object
 ```
+* Quando o `.` é usado, o JS encapsula o tipo primitivo permitindo usar como objeto e ter novas funcionalidades
+```bash
+console.log(outraMensagem.length);
+```
+* .length (comprimento) - neste caso, mostra a quantidade de caracteres
+```bash 
+console.log(outraMensagem[2]);
+```
+```bash
+console.log(outraMensagem.includes('rato'));
+#true
+```
+* .includes diz se existe ou não o que foi escrito;
+```bash
+console.log(mensagem.startsWith('Dona'));
+#true
+console.log(mensagem.endsWith('parede'));
+#true
+```
+```bash
+console.log(outraMensagem.indexOf('rato'));
+#7
+```
+• Outros
+* .trim();
+* .split()
+# Template Literal
+```bash
+let usuario = 'Pedro';
+
+const email = `Olá, ${usuario}.
+
+Esta é uma cartilha de email.
+
+Me corresponda o mais rápido possível 
+
+Obrigado`;
+
+console.log(email);
+```
+# Date
+```bash
+const data = new Date();
+
+console.log(data);
+```
+* Informa a data atual
 

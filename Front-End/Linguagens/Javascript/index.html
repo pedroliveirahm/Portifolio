@@ -6,13 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body style="background-color: rgb(41, 39, 39);">
-    <h3 style="color: rgb(128, 125, 125);">Aprendendo JS</h3>
+    <h2 class="title" style="color: rgb(128, 125, 125);">Aprendendo o DOM</h2>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em Javascript.</p>
+    <div id="msg">Clique em mim</div>
+    <script>
+        var paragrafo = document.getElementsByTagName('p')[0];
+        window.document.write(paragrafo.innerText);
 
-    <script src="Teste.js"></script>
+
+
+    </script>
 </body>
 
 </html>
