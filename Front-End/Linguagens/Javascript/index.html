@@ -6,21 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+        input {
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+        div#res {
+            margin-top: 20px;
+        }
+    </style>
 
 </head>
 
-<body style="background-color: rgb(41, 39, 39);">
-    <h2 class="title" style="color: rgb(128, 125, 125);">Aprendendo o DOM</h2>
-    <p>Aqui vai o resultado</p>
-    <p>Aprendendo a usar o <strong>DOM</strong> em Javascript.</p>
-    <div id="msg">Clique em mim</div>
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" name="txtn1" id="txtn1">
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res">Resultado</div>
+    
     <script>
-        var paragrafo = document.getElementsByTagName('p')[0];
-        window.document.write(paragrafo.innerText);
+        function somar() {
+            var tn1 = document.getElementById('txtn1')
+            var tn2 = document.querySelector('input#txtn2')
+            var res = document.getElementById('res')
 
+            var n1 = Number(tn1.value) 
+            var n2 = Number(tn2.value)
 
+            var calculo = n1 + n2
 
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${calculo}</strong>`
+        }
     </script>
 </body>
 
