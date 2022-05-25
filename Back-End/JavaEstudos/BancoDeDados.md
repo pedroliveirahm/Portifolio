@@ -219,3 +219,13 @@
 * set ano = '2025'
 * where ano = '2022';
 
+# Aula 06 - Backup de BD
+* O backup de um b.d é chamado de dump
+
+### Export Database
+* server > data export 
+* include create schema - se essa opção não for marcada, dentro do dump não virá a criação do b.d
+
+### Import Database
+* server > data import
+

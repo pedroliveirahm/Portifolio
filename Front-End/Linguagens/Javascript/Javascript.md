@@ -49,10 +49,24 @@ console.log(nome);
 console.log('Hello World');
 #Hello World
 ```
-## Var & Let
-• O Var é uma variável global, funciona em qualquer lugar do programa
-• O Let só funciona dentro do bloco onde declarou a variável
+## Const & Let
+• Só usar a função (let) se for preciso alterar os valores posteriormente<br><br>
+• A variável constante não tem seu valor alterado posteriormente
 
+```bash
+$Exemplo
+const valoringresso = 190;
+let valoringresso = 200;
+
+console.log('valoringresso');
+#Error
+```
+• Nesse caso ocorrerá um erro, pois não se pode alterar o valor de uma variável do tipo constante
+
+## Var
+• O Var é uma variável global, funciona em qualquer lugar do programa<br>
+• O uso do var não é uma boa prática<br>
+• O let e o const tem escopo de bloco, enquanto o var tem escopo de função
 ```bash
 if(true) {
     var a = 1;
@@ -77,20 +91,6 @@ if(true) {
 #2
 ```
 * Neste caso, funciona normalmente, pois a variável let está dentro de um bloco de código maior
-## Constante
-• Só usar a função (let) se for preciso alterar os valores posteriormente<br><br>
-• A variável constante não tem seu valor alterado posteriormente
-
-```bash
-$Exemplo
-const valoringresso = 190;
-let valoringresso = 200;
-
-console.log('valoringresso');
-#Error
-```
-
-• Nesse caso ocorrerá um erro, pois não se pode alterar o valor de uma variável do tipo constante
 # Tipos Primitivos
 ```bash
 let nome = 'rafael'; //string
