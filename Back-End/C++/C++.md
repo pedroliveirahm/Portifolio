@@ -86,7 +86,7 @@ int main() {
 ```
 ### Saída de Dados
 * Função : `printf();`
-* Sintaxe : `prinft("string de controle", arg1,arg2,...)`
+* Sintaxe : `prinft("string de controle", arg1,arg2,...);`
 * Na string de controle do prinft() pode conter :
      * texto
      * códigos especiais
@@ -109,7 +109,7 @@ int main() {
 #include <stdio.h>
 
 int main() {
-     char nome[15];
+     char nome[];
 
      printf("Digite seu nome : ");
      scanf("%s", nome);
