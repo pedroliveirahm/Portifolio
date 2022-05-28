@@ -109,7 +109,7 @@ int main() {
 #include <stdio.h>
 
 int main() {
-     char nome[];
+     char nome[15];
 
      printf("Digite seu nome : ");
      scanf("%s", nome);
@@ -119,7 +119,7 @@ int main() {
 ```
 * Não se deve utilizra o `&` com `vetores` - os colchetes indicam vetores
      ```bash
-     char nome[];
+     char nome[15];
      
      scanf("%s", nome);
      ```

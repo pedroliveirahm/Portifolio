@@ -12,8 +12,8 @@ public class App {
         // System.out.println(pessoa.nome);
         // Não é possível pois o atributo nome é private
 
-        // set -> alterar
-        // get -> retorno
+        // set -> definir
+        // get -> pegar
 
         pessoa.setNome("Pedro");
         System.out.println("Nome : " + pessoa.getNome());

@@ -3,14 +3,12 @@ package Aula02;
 import java.util.Random;
 
 public class Personagem {
-
     // Atributos
     String nome;
-    int nivel;
-    int forca;
+    int nivel, forca;
 
     // Métodos -> palavra reservada (void) verbo+Substantivo(parâmetros) {}
-    void mostrarStatus() {
+    public void mostrarStatus() {
 
         // Premissa -> "Personagem: <nome>, lv <nivel>, com <forca> de força"
         // Identificadores de formatação : String (%s), int (%d), float (%f)
@@ -18,13 +16,11 @@ public class Personagem {
                 nome, nivel, forca);
     }
 
-    // Ligado ao danoCausado
-    // Como o método calcularDano retornará  apenas uma informação, ele não pode ser void, e
+    // Como o método calcularDano retornará apenas uma informação, ele não pode ser void, e
     // sim o tipo daquela informação
-    // Chamado de método de retorno
-    int calcularDano() {
+    public int calcularDano() { // Ligado ao atributo danoCausado do método atacar
 
-        Random gerador = new Random(); // A classe Random gera números aleatórios
+        Random gerador = new Random(); // Classe que gera números aleatórios
 
         int dado20Faces = 1 + gerador.nextInt(19);
         // nextInt() diz a qtd de nmrs que vão ser gerados aleatóriamente
@@ -35,7 +31,7 @@ public class Personagem {
         return dano; // retornar o dano
     }
 
-    void atacar(String alvo, String habilidade) {
+    public void atacar(String alvo, String habilidade) {
 
         int danoCausado = calcularDano();
 

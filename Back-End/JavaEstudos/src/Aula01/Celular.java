@@ -7,12 +7,11 @@ package Aula01;
 
 public class Celular {
     // Atributos
-    private String nome;
-    private String sistemaOperacional;
+    private String nome, sistemaOperacional;
     private int armazenamento;
     private float tamanhoTela;
 
-    // Métodos
+    // Métodos Específicos
     private void galaxy() {
 
         nome = "Galaxy S20 Ultra";
@@ -35,6 +34,16 @@ public class Celular {
         sistemaOperacional = "Ios";
         armazenamento = 256;
         tamanhoTela = 6.1f;
+    }
+
+    public void criarCelular(String nome, String sistemaOperacional, int armazenamento, float tamanhoTela) {
+        this.nome = nome;
+        this.sistemaOperacional = sistemaOperacional;
+        this.armazenamento = armazenamento;
+        this.tamanhoTela = tamanhoTela;
+        System.out.format(
+                    "O %s possui as seguintes caracteristicas :\n sistema operacional - %s, armazenamento de %dgb e tela de %.2f polegadas\n",
+                    nome, sistemaOperacional, armazenamento, tamanhoTela);
     }
 
     public void descreverCelular(String celular) { // Pede um argumento (celular)
