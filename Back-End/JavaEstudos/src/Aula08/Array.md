@@ -1,5 +1,5 @@
 # Arrays (Vetores)
-* São coleções de elementos que podem ser identificado por um índice
+* São coleções de elementos que podem ser identificados por um índice
 ## Wrapper Class
 * Uma classe que representa um tipo primitivo
 * int -> Integer

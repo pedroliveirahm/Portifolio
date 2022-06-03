@@ -37,7 +37,7 @@ public class Array {
         // Foreach
         System.out.println("As pessoas envolvidas são : ");
         for (String pessoa : pessoas) {
-            System.out.println(pessoa);
+            System.out.println(pessoa); 
         }
 
         // For() - não recomendado

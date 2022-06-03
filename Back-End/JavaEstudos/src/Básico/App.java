@@ -27,14 +27,14 @@ public class App {
     private PrintStream sysout = new PrintStream(System.out); // O objeto sysout é uma abreviação do system.out
     private Scanner sysin = new Scanner(System.in); // O Objeto sysin é uma abreviação do system.in
 
-    // Método construtor
+    // Método Construtor
     public App() {
 
     }
 
-    // Métodos específicos
+    // Métodos Específicos
 
-        // Entrada e Saída de dados
+        // Entrada e Saída de Dados
     public void comandosBasicos() {
 
         sysout.println("Olá! Qual seu nome?");
@@ -60,7 +60,7 @@ public class App {
 
     public void repeticaoFor() {
 
-        for (int x = 0; x < 5; x++) { // condição; enquanto; pararLooping
+        for (int x = 0; x < 5; x++) { // variável de índice; enquanto; pararLooping
 
             sysout.println("Laço de repetição FOR");
 

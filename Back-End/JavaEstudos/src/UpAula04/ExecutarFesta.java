@@ -26,7 +26,7 @@ public class ExecutarFesta {
         
     }
 
-    // Métodos específicos
+    // Métodos Específicos
     // ...
 
     // Métodos getters e setters 
